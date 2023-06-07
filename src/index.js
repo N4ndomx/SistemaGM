@@ -16,7 +16,7 @@ APP.use(express.static(join(dirCode, "public")))
 APP.use(rutas)
 
 APP.listen(PUERTO)
-console.log(" Puesto escuchando en ", PUERTO)
+console.log("http//localhost:",PUERTO)
 
 
 
