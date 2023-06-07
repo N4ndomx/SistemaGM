@@ -1,12 +1,17 @@
 
 class loginModel {
-  async getUserByUsername(connection, username) {
-    // Utilizar la instancia de conexión para realizar consultas
-    const query = 'SELECT * FROM users WHERE username = ?';
-    const result = await connection.query(query, [username]);
-    return result;
+
+  constructor(connection) {
+    this.conx = connection;
   }
-  
+  async getUserByUsername(username) {
+    // Utilizar la instancia de conexión para realizar consultas
+    const query = 'SELECT * FROM soldados WHERE nombre = ?';
+    const result = await this.conx.query(query, [username]);
+    console.log(result)
+    // return result;
+  }
+
   // Otros métodos del modelo...
 }
 
