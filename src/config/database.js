@@ -1,8 +1,9 @@
 // config/database.js
 // Datos de conexion
-module.exports = {
-    host: 'localhost:3306',
-    user: 'root',
-    password: 'root',
-    database: 'sgm'
-  };
+export const config = {
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'sgm',
+  port: 3306
+};

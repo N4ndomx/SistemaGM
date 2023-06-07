@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { index } from '../controllers/loginControllers.js';
-
+import loginViewController from '../controllers/loginViewControllers.js';
+const loginControl = new loginViewController();
 const rutas = Router();
 
 // Inicio de secion del sistema 
-rutas.get('/', (req, res) => { index(req, res) });
+rutas.get('/', (req, res) => { loginControl.index(req, res) });
+rutas.post('/login', (req, res) => { loginControl.login(req, res) });
 
 // rutas.get("/",(req,res)=>{res.render("home")}) // Inicio de secion del sistema 
 // rutas.get("/registro-admin",(req,res)=>{res.render("Blog")})
