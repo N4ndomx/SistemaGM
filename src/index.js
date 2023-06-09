@@ -13,6 +13,7 @@ APP.set("views", join(dirCode, "views"))
 APP.set("view engine", 'ejs')
 // indica donde estan los elemtos estaticos
 APP.use(express.static(join(dirCode, "public")))
+
 APP.use(rutas)
 
 APP.listen(PUERTO)
