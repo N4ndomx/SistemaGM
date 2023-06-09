@@ -8,10 +8,11 @@ const rutas = Router();
 
 // Inicio de secion del sistema 
 rutas.get('/', (req, res) => { loginControl.index(req, res) });
-rutas.get('/datos/:matricula', (req, res) => { usuarioDatosControl.datosSoldado(req, res) });
 
-// Ruta para el endpoint de inicio de sesión
+// Conexion con el BD
+rutas.get('/datos/:matricula', (req, res) => { usuarioDatosControl.datosSoldado(req, res) });
 rutas.get('/login/:matricula/:contra', (req, res) => {loginControl.validacionlogin(req, res)});
+
 // rutas.get("/",(req,res)=>{res.render("home")}) // Inicio de secion del sistema 
 // rutas.get("/registro-admin",(req,res)=>{res.render("Blog")})
 // rutas.get("/asig-mision",(req,res)=>{res.render("Blog")})
