@@ -1,43 +1,33 @@
+<!-- home.ejs -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Capitan</title>
+    <link rel="stylesheet" href="/css/home.css" />
+    <%- include('partials/bootstrap') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-    </title>
-    <%- include('partials/head')%>
-        <%- include('partials/estilos') %>
-</head>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
 
-<body>
-    <%- include('partials/Navbar')%>
-
-
-        <!-- Presentacion -->
-        <div style="padding: 3.5rem;">
-            <div class="presentacion border border-primary rounded-4">
-                <h1 class="display-4">Hola Mundo</h1>
-                <p class="lead txt-presentacion">En esta pagina se recuprerar los diferentes proyectos que ire
-                    creando a lo largo de vida como desarrollador de software y como estudienates del mismo. <br>
-                    Compartir mi conociemto y desarrollo es el principal objetivo.
-                </p>
-                <hr class="my-4">
-                <figure class="text-center">
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>Si puedes imaginarlo , puedes programarlo</p>
-                            <footer class="blockquote-footer">Alejandro Taboada <cite title="Canal Youtube">Programacion
-                                    ATC
-                                </cite></footer>
-                        </blockquote>
-                    </div>
-                </figure>
-
-            </div>
-        </div>
-
-</body>
-
+    <div class="options-container">
+      <a href="/perfil" class="option option1">
+        <img src="/img/perfil.png" alt="Perfil" class="option-image" />
+        <span class="option-title">Perfil</span>
+      </a>
+      <a href="/registro" class="option option2">
+        <img src="/img/registro.png" alt="Registro" class="option-image" />
+        <span class="option-title">Registro</span>
+      </a>
+      <a href="/misiones" class="option option3">
+        <img src="/img/misiones.png" alt="Misiones" class="option-image" />
+        <span class="option-title">Misiones</span>
+      </a>
+      <a href="/estatus" class="option option4">
+        <img src="/img/estatus.png" alt="Estatus" class="option-image" />
+        <span class="option-title">Estatus</span>
+      </a>
+    </div>
+  </body>
 </html>

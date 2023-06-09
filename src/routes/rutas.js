@@ -18,7 +18,7 @@ rutas.get('/login/:matricula/:contra', (req, res) => {loginControl.validacionlog
 // rutas.get("/asig-mision",(req,res)=>{res.render("Blog")})
 rutas.get("/perfil",(req,res)=>{res.render("perfilCapitan")})
 // rutas.get("/estadisticas",(req,res)=>{res.render("Blog")})
-// rutas.get("/home",(req,res)=>{res.render("Blog")})
+rutas.get("/home",(req,res)=>{res.render("home")})
 // // rutas.get("/blog",(req,res)=>{res.render("Blog")})
 
 export default rutas;
