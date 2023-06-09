@@ -1,0 +1,10 @@
+.btnRegresar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    color: black;
+    margin-top: 1.5%;
+    margin-left: 3%;
+
+}
