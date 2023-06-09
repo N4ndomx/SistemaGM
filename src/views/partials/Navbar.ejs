@@ -1,28 +1,26 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <div class="container-fluid ">
-        <a class="navbar-brand" href="/">
-            <!-- <img src="img/puma.png" alt="" width="35" height="30" class="d-inline-block align-text-top"> -->
-            <span class="h3">Godard Studios</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/proyec">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
-            </ul>
+<link rel="stylesheet" href="/css/navbar.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<script>
+function salir(){
+  localStorage.removeItem('matricula')
+}
+</script>
+
+<div class="navbar">
+  <div class="container">
+    <div class="logo-container">
+      <div class="marca">
+        <img src="/img/logo.jpg" alt="Logo del sistema" class="img-logo" />
+        <div class="title-section">
+          <h2>MIXCÓATL</h2>
+          <p>Sistema de Gestión de Personal Militar</p>
         </div>
+      </div>
     </div>
-</nav>
+    <div class="user-section">
+      <p class="user">Capitán</p>
+      <a href="/" onclick="salir()"class="logout-icon"><i class="material-icons">logout</i></a>
+      
+    </div>
+  </div>
+</div>

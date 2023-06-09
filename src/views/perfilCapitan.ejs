@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/css/perfilCapitan.css">
+    <%- include('partials/bootstrap')%>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // Hacer solicitud a la API utilizando Axios
+            const apiUrl = 'http://localhost:3000/datos/' + localStorage.getItem('matricula');
+            axios.get(apiUrl)
+                .then(response => {
+                    var nombre = document.getElementById("nombre");
+                    var matricula = document.getElementById("matricula");
+                    var correo = document.getElementById("correo");
+                    var curp = document.getElementById("curp");
+                    var edad = document.getElementById("edad");
+                    var tel = document.getElementById("tel");
+                    var img = document.getElementById("img-p");
+                    console.log(response.data);
+                    nombre.textContent = response.data.nombre + " " + response.data.apellidos_paterno + " " + response.data.apellidos_materno
+                    correo.textContent = response.data.corre_elect
+                    curp.textContent = response.data.CURP
+                    edad.textContent = response.data.edad
+                    tel.textContent = response.data.telefono
+                    matricula.textContent = response.data.matricula
+                    img.src = response.data.fotografia
+
+                })
+                .catch(error => {
+                    // Manejo de errores
+                    console.error('Error:', error);
+                });
+
+        });
+
+    </script>
+    <%- include('partials/navbar')%>
+        <div class="btnRegresar">
+            <i class="material-icons">arrow_back</i>
+            <a href="/node">
+
+                <h2>Regresar</h2>
+            </a>
+        </div>
+
+
+        <div class="left-section">
+            <img id="img-p" src="img/logo.jpg" alt="Mi foto" class="profile-pic">
+            <h2 id="nombre">Tu Nombre</h2>
+        </div>
+
+
+        <div class="right-section">
+            <h2>Matricula : </h2>
+            <h2 id="matricula">N</h2>
+            <br>
+            <h2>Correo</h2>
+            <h2 id="correo">N</h2>
+            <br>
+            <h2>CURP</h2>
+            <h2 id="curp">N</h2>
+            <br>
+            <h2>Edad</h2>
+            <h2 id="edad">N</h2>
+            <br>
+            <h2>Telefono</h2>
+            <h2 id="tel">N</h2>
+
+        </div>
+
+
+
+</body>
+
+</html>

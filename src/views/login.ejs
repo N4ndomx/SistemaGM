@@ -19,7 +19,7 @@
         .then(response => {
           alert(response.data.message)
           console.log(response.data.message);
-          window.location.href = 'http://localhost:3000/home';
+          window.location.href = 'http://localhost:3000/perfil';
           localStorage.setItem('matricula', username);
         })
         .catch(error => {
