@@ -1,73 +1,66 @@
-<!-- Define que el documento esta bajo el estandar de HTML 5 -->
-<!doctype html>
-
-<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<!-- login.ejs -->
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
+  <meta charset="utf-8" />
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="/css/login.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+    function submitForm(event) {
+      event.preventDefault();
+      const username = document.getElementById('matricula').value;
+      const password = document.getElementById('password').value;
+      const apiUrl = 'http://localhost:3000/login/' + username + '/' + password;
+      axios.get(apiUrl)
+        .then(response => {
+          alert(response.data.message)
+          console.log(response.data.message);
+          window.location.href = 'http://localhost:3000/home';
+          localStorage.setItem('matricula', username);
+        })
+        .catch(error => {
+          // Manejo de errores
+          alert('Error: \nRevisa tus datos!')
+          console.error('Error:', error);
+        });
 
-    <meta charset="utf-8">
-
-    <title> Formulario de Acceso </title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Formulario Acceso">
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
-
-    <!-- Link hacia el archivo de estilos css -->
-    <link rel="stylesheet" href="css/login.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
-        function submitForm(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const apiUrl = 'http://localhost:3000/login/' + username + '/' + password;
-            axios.get(apiUrl)
-                .then(response => {
-                    alert(response.data.message)
-                    console.log(response.data.message);
-                    window.location.href = 'http://localhost:3000/home';
-                    localStorage.setItem('matricula', username);
-                })
-                .catch(error => {
-                    // Manejo de errores
-                    alert('Error: \nRevisa tus datos!')
-                    console.error('Error:', error);
-                });
-
-        }
-    </script>
-
+    }
+  </script>
 </head>
 
 <body>
-
-    <div id="contenedor">
-        <div id="central">
-            <div id="login">
-                <div class="titulo">
-                    Bienvenido
-                </div>
-                <form id="loginform">
-                    <input type="text" id="username" name="usuario" placeholder="Usuario" required>
-
-                    <input type="password" id="password" placeholder="Contraseña" name="password" required>
-                    <button type="submit" onclick="submitForm(event)" title="Ingresar" name="Ingresar">Login</button>
-                </form>
-                <div class="pie-form">
-
-                </div>
-            </div>
-            <div class="inferior">
-
-            </div>
-        </div>
+  <div class="container">
+    <div class="logo-container">
+      <div class="marca">
+        <img src="/img/logo.jpg" alt="Logo del sistema" class="img-logo" />
+        <h2>MIXCÓATL</h2>
+        <p>Sistema de Gestión de Personal Militar</p>
+      </div>
     </div>
-
+    <div class="form-container">
+      <form method="POST" action="/login">
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="material-icons">person</i>
+          </span>
+          <input type="text" id="matricula" name="matricula" maxlength="7" required placeholder="Matrícula" />
+        </div>
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="material-icons">lock</i>
+          </span>
+          <input type="password" id="password" name="password" pattern="[0-9]{8}" required placeholder="Contraseña" />
+        </div>
+        <div>
+          <input type="submit" value="Iniciar sesión" onclick="submitForm(event)" />
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>
