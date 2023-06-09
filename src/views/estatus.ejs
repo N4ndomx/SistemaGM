@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Estatus</title>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/estatus.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="estatus-container">
+      <a href="/home" class="back-button">
+        <i class="material-icons">arrow_back</i>
+        Regresar
+      </a>
+      <div class="search-bar">
+        <input type="text" id="cuartel-id" placeholder="Cuartel" />
+        <button id="buscar-button" onclick="accion()">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+      <div id="info-container" style="display: none">
+        <h2 id="nombre-cuartel"></h2>
+        <div class="info-text">
+          <p id="direccion-cuartel"></p>
+          <p id="capacidad-cuartel"></p>
+          <p id="fecha-creacion-cuartel"></p>
+          <p id="total-companias-cuartel"></p>
+          <div id="companias-cuartel"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function accion(){
+        var cuartelId = document.getElementById("cuartel-id").value;
+          if (cuartelId.length === 5) {
+            document.getElementById("nombre-cuartel").textContent =
+              "Cuartel Militar 'Fortaleza del Sol'";
+            document.getElementById("direccion-cuartel").textContent =
+              "Dirección: Avenida Libertad, Código Postal 12345, Ciudad de Valoria";
+            document.getElementById("capacidad-cuartel").textContent =
+              "Capacidad: El Cuartel Militar 'Fortaleza del Sol' tiene una capacidad para albergar y entrenar a un total de 1,000 efectivos militares, incluyendo personal de infantería, artillería y fuerzas especiales. Además, cuenta con instalaciones para vehículos blindados, helicópteros y una amplia zona de entrenamiento.";
+            document.getElementById("fecha-creacion-cuartel").textContent =
+              "Fecha de creación: El cuartel fue fundado el 15 de marzo de 1947 y desde entonces ha sido un pilar fundamental en la defensa y seguridad de la nación.";
+            document.getElementById("total-companias-cuartel").textContent =
+              "Total de compañías: La 'Fortaleza del Sol' alberga un total de 10 compañías militares, cada una especializada en diferentes áreas de combate y apoyo logístico. Estas compañías incluyen:";
+            document.getElementById("companias-cuartel").innerHTML = `
+            <ul>
+              <li>Compañía Alfa: Fuerzas Especiales y Operaciones Especiales.</li>
+              <li>Compañía Bravo: Infantería y combate urbano.</li>
+              <li>Compañía Charlie: Artillería y apoyo de fuego.</li>
+              <li>Compañía Delta: Reconocimiento y vigilancia.</li>
+              <li>Compañía Echo: Comunicaciones y ciberseguridad.</li>
+              <li>Compañía Foxtrot: Logística y abastecimiento.</li>
+              <li>Compañía Golf: Ingenieros y construcción de infraestructura.</li>
+              <li>Compañía Hotel: Inteligencia y análisis estratégico.</li>
+              <li>Compañía India: Servicio médico y atención sanitaria.</li>
+              <li>Compañía Juliet: Transporte y movilidad.</li>
+            </ul>
+          `;
+            document.getElementById("info-container").style.display = "block";
+          } else {
+            document.getElementById("info-container").style.display = "none";
+          }
+
+      }
+      // document
+      //   .getElementById("buscar-button")
+      //   .addEventListener("click", function () {
+      //     var cuartelId = document.getElementById("cuartel-id").value;
+      //     if (cuartelId.length === 5) {
+      //       document.getElementById("nombre-cuartel").textContent =
+      //         "Cuartel Militar 'Fortaleza del Sol'";
+      //       document.getElementById("direccion-cuartel").textContent =
+      //         "Dirección: Avenida Libertad, Código Postal 12345, Ciudad de Valoria";
+      //       document.getElementById("capacidad-cuartel").textContent =
+      //         "Capacidad: El Cuartel Militar 'Fortaleza del Sol' tiene una capacidad para albergar y entrenar a un total de 1,000 efectivos militares, incluyendo personal de infantería, artillería y fuerzas especiales. Además, cuenta con instalaciones para vehículos blindados, helicópteros y una amplia zona de entrenamiento.";
+      //       document.getElementById("fecha-creacion-cuartel").textContent =
+      //         "Fecha de creación: El cuartel fue fundado el 15 de marzo de 1947 y desde entonces ha sido un pilar fundamental en la defensa y seguridad de la nación.";
+      //       document.getElementById("total-companias-cuartel").textContent =
+      //         "Total de compañías: La 'Fortaleza del Sol' alberga un total de 10 compañías militares, cada una especializada en diferentes áreas de combate y apoyo logístico. Estas compañías incluyen:";
+      //       document.getElementById("companias-cuartel").innerHTML = `
+      //       <ul>
+      //         <li>Compañía Alfa: Fuerzas Especiales y Operaciones Especiales.</li>
+      //         <li>Compañía Bravo: Infantería y combate urbano.</li>
+      //         <li>Compañía Charlie: Artillería y apoyo de fuego.</li>
+      //         <li>Compañía Delta: Reconocimiento y vigilancia.</li>
+      //         <li>Compañía Echo: Comunicaciones y ciberseguridad.</li>
+      //         <li>Compañía Foxtrot: Logística y abastecimiento.</li>
+      //         <li>Compañía Golf: Ingenieros y construcción de infraestructura.</li>
+      //         <li>Compañía Hotel: Inteligencia y análisis estratégico.</li>
+      //         <li>Compañía India: Servicio médico y atención sanitaria.</li>
+      //         <li>Compañía Juliet: Transporte y movilidad.</li>
+      //       </ul>
+      //     `;
+      //       document.getElementById("info-container").style.display = "block";
+      //     } else {
+      //       document.getElementById("info-container").style.display = "none";
+      //     }
+      //   });
+    </script>
+  </body>
+</html>
