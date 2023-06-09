@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <%- include('partials/bootstrap')%>
+        <link rel="stylesheet" href="css/btnRegresar.css">
+        <link rel="stylesheet" href="css/registrarAdmin.css">
 </head>
+
 <body>
     <%- include('partials/navbar')%>
 
-    <link rel="stylesheet" href="css/btnRegresar.css">
-    <div class="btnRegresar">
-        <i class="material-icons">arrow_back</i>
-        <a href="/home">
-            <h2>Regresar</h2>
-        </a>
-    </div>
+        <div class="btnRegresar">
+            <i class="material-icons">arrow_back</i>
+            <a href="/home">
+                <h2>Regresar</h2>
+            </a>
+        </div>
 
-    
+
+        <div class="registro">
+
+            <div class="conIMG">
+                <img id="presentacion" src="
+            https://img.freepik.com/fotos-premium/companeros-trabajo-que-usan-computadoras_13339-17805.jpg?w=360
+            " alt="">
+            </div>
+            <div class="regis">
+                <input style="
+            width: 260px;
+        " class="form-control inputGroup-sizing-lg" type="search" placeholder=" Matricula del Soldado" aria-label=""
+                    required>
+                <input class="form-control inputGroup-sizing-lg" type="search" placeholder="Contraseña del Capitan"
+                    aria-label="" required>
+                <input class="form-control inputGroup-sizing-lg" type="search" placeholder="Confirmacion de Contraseña"
+                    aria-label="" required>
+                <button id="guardar" type="button" class="btn  btn-lg btn-dark">Asigar Administrador</button>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
 </body>
+
 </html>

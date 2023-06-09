@@ -10,7 +10,7 @@ body {
   justify-items: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
   padding: 20px;
   width: 800px;
   height: 400px;

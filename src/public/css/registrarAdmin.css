@@ -1,0 +1,33 @@
+/* login.css*/
+body {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+.registro{
+    margin: 2% 10%;
+    display: flex;
+    margin-left: 28%;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    height: 410px;
+    margin-bottom: 0.2%;
+}
+
+#presentacion{
+    width: 270px;
+    height: 320px;
+    border-radius: 10px;
+}
+input{
+    margin-bottom: 10%;
+    width: 290px
+
+}
+.regis{
+    margin-left: 5%;
+
+}
