@@ -6,7 +6,7 @@ EL sistema cuenta con dos tipos de Usuario pero este prototipo solo representa l
 
 ## Dependencias
 
-Necesita las siguientes aplicaciones para un despliegue local
+Necesita las siguientes aplicaciones para un despliegue local 
 
 - [Nodejs](https://nodejs.org/es) v18.15.0
 - [Mysql](https://dev.mysql.com/downloads/installer/) v8.0.33
@@ -15,9 +15,13 @@ Opcionalmente puede instalar
 
 - MySQL Workbench 8.0.33
 
+> Elegir el instalador segun la arquitectura de la computadora donde se realizara el despliege 
+
 ## Creación de la base de datos
 
-Para crear la base de datos y algunos insert para el sistema ,deberá ejecutar el código sql que encontrara en la carpeta **src/config/bd.sql** como usuario **root** .
+Para crear la base de datos y algunos insert para el sistema ,deberá ejecutar el código sql que encontrara en la carpeta **src/config/bd.sql** como usuario **root** en mysql.
+
+La eleccion de la herramienda para ejecutar el codigo sql en mysql queda a su consideracion (Shell o Workbench)
 
 ```bash
 src/config/bd.sql
@@ -51,7 +55,7 @@ Utilice el siguiente comando
 npm install
 ```
 
-Una vez que terminen todas las libreras de descargarse, podrá ejecutar en proyecto con el siguiente comando
+Con todas las libreriaas descargadas ,podra ejecutar el siguiente comando para iniciar el proyecto en su sistema
 
 ```bash
 npm start
