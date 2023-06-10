@@ -17,9 +17,9 @@ APP.use(express.static(join(dirCode, "public")))
 APP.use(rutas)
 
 APP.listen(PUERTO)
-console.log("http//localhost:",PUERTO)
-
-
+// console.log("http//localhost:",PUERTO)
+console.log('Sistema desplegado en:')
+console.log(`http//localhost:${PUERTO} \n`)
 
 
 
